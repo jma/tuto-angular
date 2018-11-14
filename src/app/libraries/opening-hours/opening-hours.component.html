@@ -2,7 +2,7 @@
 <ul class="list-unstyled">
   <li *ngFor="let day of days">
     <strong>{{ day }}: </strong>
-    <span *ngIf="!libraryIsClosed(day)">{{ openingHours[day].from }} - {{ openingHours[day].to }}</span>
-    <span *ngIf="libraryIsClosed(day)">Closed</span>
+    <span *ngIf="!library.isClosed(day)">{{ library.openingHours[day].from }} - {{ library.openingHours[day].to }}</span>
+    <span *ngIf="library.isClosed(day)">Closed</span>
   </li>
 </ul>

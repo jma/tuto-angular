@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { OpeningHours } from '../library';
 import { LibrariesService } from '../libraries.service';
+import { Library } from '../library';
 
 @Component({
   selector: 'libraries-opening-hours',
@@ -9,7 +10,7 @@ import { LibrariesService } from '../libraries.service';
 })
 export class OpeningHoursComponent implements OnInit {
 
-  openingHours: OpeningHours;
+  library: Library;
 
   days = [
     "monday",
@@ -22,13 +23,9 @@ export class OpeningHoursComponent implements OnInit {
   ];
 
   constructor(private librariesService: LibrariesService) {
-    this.librariesService.currentLibrary.subscribe(library => this.openingHours = library.openingHours);
+    this.librariesService.currentLibrary.subscribe(library => this.library = library);
   }
 
   ngOnInit() {
-  }
-
-  libraryIsClosed(day) {
-    return this.librariesService.libraryIsClosed(day);
   }
 }

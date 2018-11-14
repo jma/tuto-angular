@@ -14,4 +14,6 @@
       <dd>{{ library.address }}</dd>
     </dl>
   </div>
+  <input [(ngModel)]="library.name" [ngModelOptions]="{updateOn: 'blur'}">
+  <button class="btn btn-danger" (click)="submit()">submit</button>
 </div>

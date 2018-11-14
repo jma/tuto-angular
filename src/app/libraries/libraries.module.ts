@@ -11,6 +11,7 @@ import { DetailedComponent } from './detailed/detailed.component';
 import { OpeningHoursComponent } from './opening-hours/opening-hours.component';
 import { DateExceptionsComponent } from './date-exceptions/date-exceptions.component';
 import { LibrariesService } from './libraries.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   providers: [
@@ -18,10 +19,11 @@ import { LibrariesService } from './libraries.service';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     LibrariesRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryLibraryService, { dataEncapsulation: false }
+      InMemoryLibraryService, { dataEncapsulation: false, put204: false }
     )
   ],
   declarations: [MainComponent, DetailedComponent, OpeningHoursComponent, DateExceptionsComponent]

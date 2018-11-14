@@ -10,12 +10,17 @@ import { LibrariesService } from '../libraries.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+
   public library: Library;
+
   constructor(private librariesService: LibrariesService) {
     this.librariesService.currentLibrary.subscribe(library => this.library = library);
   }
 
   ngOnInit() {
+    this.librariesService.loadLibrary(11);
+  }
+  reload() {
     this.librariesService.loadLibrary(11);
   }
 }
