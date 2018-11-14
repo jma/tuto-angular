@@ -1,0 +1,7 @@
+<h4>Exceptions (holidays, etc.)</h4>
+<!-- <div *ngFor="let exception of dateExceptions">{{ exception | json}}</div> -->
+
+<dl *ngFor="let exception of dateExceptions">
+  <dt>{{ exception.from | date }} <span *ngIf="exception['to']"> - {{ exception['to'] | date }}</span></dt>
+    <dd>{{ exception.description }}</dd>
+</dl>

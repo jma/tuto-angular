@@ -1,0 +1,19 @@
+<span *ngIf="!library">
+Loading...
+</span>
+<div *ngIf="library">
+  <div class="row">
+    <div class="col-md-12">
+      <libraries-detailed></libraries-detailed>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <libraries-opening-hours></libraries-opening-hours>
+    </div>
+    <div class="col-md-6">
+      <libraries-date-exceptions [dateExceptions]="library.dateExceptions"></libraries-date-exceptions>
+    </div>
+  </div>
+</div>
